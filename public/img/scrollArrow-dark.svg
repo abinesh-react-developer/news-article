@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <filter id="Rectangle_2125" x="0" y="0" width="30" height="30" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_2126" data-name="Rectangle 2126" width="12" height="12" transform="translate(1264 114)" fill="#555" stroke="#ddd" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_16450" data-name="Group 16450" transform="translate(-1373 -106)">
+    <g transform="matrix(1, 0, 0, 1, 1373, 106)" filter="url(#Rectangle_2125)">
+      <g id="Rectangle_2125-2" data-name="Rectangle 2125" transform="translate(3 2)" fill="#17171a" stroke="#494d50" stroke-width="1">
+        <rect width="24" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Mask_Group_20" data-name="Mask Group 20" transform="translate(118)" clip-path="url(#clip-path)">
+      <g id="right-arrow_1_" data-name="right-arrow (1)" transform="translate(1259.175 109.174)">
+        <path id="Path_5420" data-name="Path 5420" d="M8.746,16.6a.763.763,0,1,1-1.079-1.079l4.7-4.7-4.7-4.7A.763.763,0,0,1,8.746,5.05l5.237,5.237a.764.764,0,0,1,0,1.079Z" fill="#555"/>
+      </g>
+    </g>
+  </g>
+</svg>

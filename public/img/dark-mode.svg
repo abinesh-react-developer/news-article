@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_5257" data-name="Rectangle 5257" width="16" height="16" transform="translate(1213 32)" fill="#222" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Dark_mode" data-name="Dark mode" transform="translate(-1213 -32)" clip-path="url(#clip-path)">
+    <path id="night-mode" d="M16.372,10.515a.533.533,0,0,0-.556-.125A7.157,7.157,0,0,1,6.672,1.245a.533.533,0,0,0-.68-.681A8.112,8.112,0,0,0,2.938,2.5,8.223,8.223,0,1,0,14.567,14.125,8.112,8.112,0,0,0,16.5,11.07a.533.533,0,0,0-.126-.555Zm-2.559,2.855A7.157,7.157,0,1,1,5.357,2.007,8.272,8.272,0,0,0,7.6,9.464,8.27,8.27,0,0,0,15.053,11.7a7.122,7.122,0,0,1-1.24,1.667Z" transform="translate(1212.471 31.467)" fill="#222"/>
+  </g>
+</svg>

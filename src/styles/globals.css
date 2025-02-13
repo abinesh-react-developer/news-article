@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Lexend", sans-serif;
+  }
+}
+
+
+@layer utilities {
+
+  .border-gray-1 {
+    border-color: #DDDDDD;
+  }
+
+  .border-gray-2 {
+    border-color: #EBEBEB;
+
+  }
+
+
+
+  .shadow-1 {
+    box-shadow: 0px 1px 2px #00000014;
+  }
+
+  .bg-blue-1 {
+    background-color: #3880ff;
+  }
+
+  .bg-gray-1 {
+    background-color: #F7F7F7;
+  }
+
+  .bg-gray-2 {
+    background-color: #555555;
+  }
+
+  .text-grey-1 {
+    color: #717171;
+  }
+
+  .text-grey-2 {
+    color: #555555;
+  }
+
+  .bg-dark-1 {
+    background-color: #0C1117;
+  }
+
+  .bg-dark-2 {
+    background-color: #161B22;
+  }
+
+  .bg-dark-3 {
+    background-color: #17171A;
+  }
+
+  .bg-dark-4 {
+    background-color: #0E1117;
+  }
+
+  .text-light-1 {
+    color: #E6EDF3;
+  }
+
+  .text-light-2 {
+
+    color: #848D97;
+  }
+
+  .border-dark-1 {
+    border-color: #252B31;
+  }
+
+}
+
+::-webkit-file-upload-button{
+  cursor: pointer;
+}
+
+
+@keyframes l26 {
+  100% {transform:rotate(1turn)}
+}
+
+.dark .text-black{
+  color: #FFFFFF;
+}
+
+
+.post-img{
+  height: 544px !important;
+  width: 100% !important;
+}
+
+
+.c-image{
+  height: 209px !important;
+  width: 100% !important;
+}
