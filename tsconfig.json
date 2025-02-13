@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/__tests__/index.test.js", "jest.config.cjs", "src/components/Header/index.jsx", "src/context/LoadingContext.tsx", "src/utility/Toast/index.jsx", "interceptor.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/__tests__/header.test.js", "jest.config.cjs", "src/components/Header/index.jsx", "src/context/LoadingContext.tsx", "src/utility/Toast/index.jsx", "interceptor.js"],
   "exclude": ["node_modules"]
 }

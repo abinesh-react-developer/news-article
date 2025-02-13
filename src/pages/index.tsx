@@ -1,12 +1,11 @@
-
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { GetServerSideProps } from "next";
+import Head from "next/head"; // ✅ Import Next.js Head for SEO
 import instance from "../../interceptor";
 import { useLoading } from "../context/LoadingContext";
 import Loading from "../components/Skeleton/postSkeleton";
-import PostList from "../components/postCard"
-
+import PostList from "../components/postCard";
 
 type Article = {
   title: string;
@@ -16,10 +15,9 @@ type Article = {
 
 interface HomeProps {
   postList: Article[];
-  page: number;
 }
 
-export default function Home({ postList,  }: HomeProps) {
+export default function Home({ postList }: HomeProps) {
   const router = useRouter();
   const { setLoading } = useLoading();
 
@@ -40,6 +38,28 @@ export default function Home({ postList,  }: HomeProps) {
 
   return (
     <>
+    
+      <Head>
+        <title>Latest News & Top Headlines | News Article </title>
+        <meta name="description" content="Stay updated with the latest headlines, news, and insights on News Article." />
+        <meta name="keywords" content="news, headlines, latest news, business, startups" />
+        <meta name="robots" content="index, follow" />
+
+       
+        <meta property="og:title" content="Latest News & Top Headlines | News Article" />
+        <meta property="og:description" content="Stay updated with the latest headlines, news, and insights on News Article." />
+        <meta property="og:image" content="/default-image.jpg" />
+        <meta property="og:type" content="website" />
+
+       
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Latest News & Top Headlines | News Article" />
+        <meta name="twitter:description" content="Stay updated with the latest headlines, news, and insights on News Article." />
+        <meta name="twitter:image" content="/default-image.jpg" />
+        <meta name="twitter:site" content="@News Article" />
+
+      </Head>
+
       <Loading />
       <PostList postList={postList} slug={""} />
     </>
@@ -50,7 +70,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const response = await instance.get("/top-headlines", {
       params: {
-        page:1,
+        page: 1,
         pageSize: 10,
       },
     });
@@ -58,7 +78,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
     return {
       props: {
         postList: response.data.articles || [],
-
       },
     };
   } catch (error) {
@@ -66,13 +85,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     return {
       props: {
         postList: [],
-
       },
     };
   }
 };
-
-
-
-
-

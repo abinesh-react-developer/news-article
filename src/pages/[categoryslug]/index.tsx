@@ -1,12 +1,12 @@
-
-import { GetServerSideProps } from 'next';
-import PostList from '../../components/postCard';
-import instance from '../../../interceptor';
-import Loading from '../../components/Skeleton/postSkeleton'
-import { useRouter } from 'next/router';
-import { useLoading } from '@/context/LoadingContext';
-import { useEffect } from 'react';
-import categoryList from '../../components/Category/category'
+import { GetServerSideProps } from "next";
+import Head from "next/head"; // ✅ Import Next.js Head for SEO
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import PostList from "../../components/postCard";
+import instance from "../../../interceptor";
+import Loading from "../../components/Skeleton/postSkeleton";
+import { useLoading } from "@/context/LoadingContext";
+import categoryList from "../../components/Category/category";
 
 type Article = {
   title: string;
@@ -20,7 +20,7 @@ interface CategoryProps {
 }
 
 export default function CategoryPage({ postList, categoryslug }: CategoryProps) {
- const router = useRouter();
+  const router = useRouter();
   const { setLoading } = useLoading();
 
   useEffect(() => {
@@ -38,23 +38,48 @@ export default function CategoryPage({ postList, categoryslug }: CategoryProps) 
     };
   }, [router, setLoading]);
 
-  return(<>
-   <Loading />
-  <PostList postList={postList} slug={categoryslug} />;
-  </>) 
+  return (
+    <>
+      <Head>
+        <title>{categoryslug.charAt(0).toUpperCase() + categoryslug.slice(1)} News | Article</title>
+        <meta
+          name="description"
+          content={`Read the latest news about ${categoryslug} on News | Article.`}
+        />
+        <meta name="keywords" content={`${categoryslug}, news, headlines, latest news`} />
+        <meta name="robots" content="index, follow" />
+
+       
+        <meta property="og:title" content={`${categoryslug.charAt(0).toUpperCase() + categoryslug.slice(1)} News | Article`} />
+        <meta property="og:description" content={`Read the latest news about ${categoryslug} on News | Article.`} />
+        <meta property="og:image" content="/default-image.jpg" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${categoryslug.charAt(0).toUpperCase() + categoryslug.slice(1)} News | Article`} />
+        <meta name="twitter:description" content={`Read the latest news about ${categoryslug} on News | Article.`} />
+        <meta name="twitter:image" content="/default-image.jpg" />
+        <meta name="twitter:site" content="@News | Article" />
+
+      </Head>
+
+      <Loading />
+      <PostList postList={postList} slug={categoryslug} />
+    </>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const categoryslug = context.params?.categoryslug || '';
+  const categoryslug = context.params?.categoryslug || "";
 
   const categoryExists = categoryList.some((category) => category.categorySlug === categoryslug);
 
   if (!categoryExists) {
-    return { notFound: true }; 
+    return { notFound: true };
   }
 
   try {
-    const response = await instance.get('/top-headlines', {
+    const response = await instance.get("/top-headlines", {
       params: {
         category: categoryslug,
         pageSize: 10,
@@ -69,7 +94,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     };
   } catch (error) {
-    console.error('Error fetching news:', error);
+    console.error("Error fetching news:", error);
     return {
       props: {
         postList: [],

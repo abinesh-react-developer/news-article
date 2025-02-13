@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import Home from "../pages/index";
+import Header from "../components/Header";
 
 describe("Home Page", () => {
   it("renders a heading", () => {
-    render(<Home />);
-    const heading = screen.getByRole("heading", { name: /welcome to next\.js/i });
+    render(<Header />);
+    const heading = screen.getByText("NEWS");
     expect(heading).toBeInTheDocument();
   });
 });
